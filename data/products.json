@@ -1,0 +1,12 @@
+[
+  {
+    "name": "SEO",
+    "sku": "seo1",
+    "price": "100000",
+    "taxRate": "18",
+    "description": "",
+    "isActive": true,
+    "id": "bd51d838-ce2e-41b3-9843-f1368912b4d0",
+    "createdAt": "2025-09-14T16:35:49.041Z"
+  }
+]

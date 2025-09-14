@@ -1,0 +1,10 @@
+[
+  {
+    "username": "admin",
+    "password": "admin123",
+    "email": "admin@invoicepro.com",
+    "role": "admin",
+    "id": "c5fe9ee4-1ef3-4a37-9b34-b3105480d843",
+    "createdAt": "2025-09-14T16:32:35.787Z"
+  }
+]
