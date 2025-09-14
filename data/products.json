@@ -8,5 +8,25 @@
     "isActive": true,
     "id": "bd51d838-ce2e-41b3-9843-f1368912b4d0",
     "createdAt": "2025-09-14T16:35:49.041Z"
+  },
+  {
+    "name": "SEO",
+    "sku": "seo1",
+    "price": "09999999",
+    "taxRate": "18",
+    "description": "",
+    "isActive": true,
+    "id": "21c44cc1-06eb-4116-ad24-e579c5cec1ce",
+    "createdAt": "2025-09-14T16:41:03.368Z"
+  },
+  {
+    "name": "Test Product v0fyR",
+    "sku": "SKU-s6K9vM",
+    "price": "29.99",
+    "taxRate": "10",
+    "description": "A description for the new test product.",
+    "isActive": true,
+    "id": "0c01e1c6-0132-4a44-bc4d-65ffd4de6d34",
+    "createdAt": "2025-09-14T16:43:07.995Z"
   }
 ]

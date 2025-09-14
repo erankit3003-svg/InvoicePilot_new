@@ -1,5 +1,5 @@
 import { useEffect } from "react";
-import { useMutation } from "@tanstack/react-query";
+import { useMutation, useQueryClient } from "@tanstack/react-query";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { Button } from "@/components/ui/button";
@@ -21,6 +21,7 @@ interface ProductFormProps {
 
 export function ProductForm({ product, onSuccess, onCancel }: ProductFormProps) {
   const { toast } = useToast();
+  const queryClient = useQueryClient();
 
   const form = useForm<ProductFormData>({
     resolver: zodResolver(insertProductSchema),
@@ -61,6 +62,8 @@ export function ProductForm({ product, onSuccess, onCancel }: ProductFormProps) 
       return response.json();
     },
     onSuccess: () => {
+      queryClient.invalidateQueries({ queryKey: ["/api/products"] });
+      queryClient.invalidateQueries({ queryKey: ["/api/dashboard"] });
       toast({
         title: "Success",
         description: "Product created successfully",
@@ -89,6 +92,8 @@ export function ProductForm({ product, onSuccess, onCancel }: ProductFormProps) 
       return response.json();
     },
     onSuccess: () => {
+      queryClient.invalidateQueries({ queryKey: ["/api/products"] });
+      queryClient.invalidateQueries({ queryKey: ["/api/dashboard"] });
       toast({
         title: "Success",
         description: "Product updated successfully",

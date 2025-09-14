@@ -50,18 +50,17 @@ export function Sidebar() {
             const isActive = location === item.href || (location === "/" && item.href === "/dashboard");
             return (
               <li key={item.name}>
-                <Link href={item.href}>
-                  <span
-                    className={`flex items-center space-x-3 px-3 py-2 rounded-md transition-colors cursor-pointer ${
-                      isActive
-                        ? "bg-primary text-primary-foreground"
-                        : "text-muted-foreground hover:bg-accent hover:text-accent-foreground"
-                    }`}
-                    data-testid={`nav-${item.name.toLowerCase()}`}
-                  >
-                    <item.icon className="w-5 h-5" />
-                    <span>{item.name}</span>
-                  </span>
+                <Link
+                  href={item.href}
+                  className={`flex items-center space-x-3 px-3 py-2 rounded-md transition-colors cursor-pointer ${
+                    isActive
+                      ? "bg-primary text-primary-foreground"
+                      : "text-muted-foreground hover:bg-accent hover:text-accent-foreground"
+                  }`}
+                  data-testid={`nav-${item.name.toLowerCase()}`}
+                >
+                  <item.icon className="w-5 h-5" />
+                  <span>{item.name}</span>
                 </Link>
               </li>
             );
