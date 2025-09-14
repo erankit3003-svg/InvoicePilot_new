@@ -28,5 +28,35 @@
     "isActive": true,
     "id": "0c01e1c6-0132-4a44-bc4d-65ffd4de6d34",
     "createdAt": "2025-09-14T16:43:07.995Z"
+  },
+  {
+    "name": "SEO",
+    "sku": "seo1",
+    "price": "999990",
+    "taxRate": "18",
+    "description": null,
+    "isActive": true,
+    "id": "18a51155-cfbf-416f-a92b-7d16bdb24309",
+    "createdAt": "2025-09-14T16:46:45.396Z"
+  },
+  {
+    "name": "SEO",
+    "sku": "seo1",
+    "price": "990",
+    "taxRate": "18",
+    "description": null,
+    "isActive": true,
+    "id": "891e128e-7e17-4edb-bdee-c7a570f4ae68",
+    "createdAt": "2025-09-14T16:47:14.337Z"
+  },
+  {
+    "name": "Sharma Ankit",
+    "sku": "seo1",
+    "price": "440",
+    "taxRate": "18",
+    "description": null,
+    "isActive": true,
+    "id": "dbd63c0f-e596-4824-a0fd-0b605fe04d2a",
+    "createdAt": "2025-09-14T16:54:26.301Z"
   }
 ]
