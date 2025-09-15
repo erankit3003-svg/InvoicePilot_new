@@ -479,7 +479,33 @@ export async function registerRoutes(app: Express): Promise<Server> {
         return res.status(404).json({ message: "Customer not found" });
       }
       
-      const pdfBuffer = await PDFService.generateInvoicePDF(invoice, customer);
+      // Enrich invoice items with product data for PDF generation
+      const enrichedItems: InvoiceItem[] = [];
+      for (const item of invoice.items as any[]) {
+        const product = await storage.getProduct(item.productId);
+        if (product) {
+          const itemSubtotal = item.quantity * parseFloat(product.price);
+          const itemDiscount = (itemSubtotal * item.discount) / 100;
+          const itemTotal = itemSubtotal - itemDiscount;
+          
+          enrichedItems.push({
+            productId: product.id,
+            productName: product.name,
+            sku: product.sku,
+            quantity: item.quantity,
+            price: parseFloat(product.price),
+            discount: item.discount,
+            total: itemTotal,
+          });
+        }
+      }
+      
+      const enrichedInvoice = {
+        ...invoice,
+        items: enrichedItems,
+      };
+      
+      const pdfBuffer = await PDFService.generateInvoicePDF(enrichedInvoice, customer);
       
       res.setHeader("Content-Type", "application/pdf");
       res.setHeader("Content-Disposition", `attachment; filename="invoice-${invoice.invoiceNumber}.pdf"`);
