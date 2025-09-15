@@ -242,9 +242,14 @@ export default function Invoices() {
                             </div>
                           </td>
                           <td className="px-4 py-4 whitespace-nowrap">
-                            <Badge className={getStatusColor(invoice.paymentStatus)}>
-                              {invoice.paymentStatus}
-                            </Badge>
+                            <div className="flex flex-col gap-1">
+                              <Badge className={getStatusColor(invoice.status)}>
+                                {invoice.status}
+                              </Badge>
+                              <Badge variant="outline" className={`text-xs ${getStatusColor(invoice.paymentStatus)}`}>
+                                {invoice.paymentStatus}
+                              </Badge>
+                            </div>
                           </td>
                           <td className="px-4 py-4 whitespace-nowrap text-sm text-muted-foreground">
                             {new Date(invoice.createdAt!).toLocaleDateString()}
