@@ -1,23 +1,13 @@
 [
   {
-    "name": "SEO",
+    "name": "SEO Service",
     "sku": "seo1",
     "price": "100000",
     "taxRate": "18",
-    "description": "",
+    "description": "Professional SEO service",
     "isActive": true,
     "id": "bd51d838-ce2e-41b3-9843-f1368912b4d0",
     "createdAt": "2025-09-14T16:35:49.041Z"
-  },
-  {
-    "name": "SEO",
-    "sku": "seo1",
-    "price": "09999999",
-    "taxRate": "18",
-    "description": "",
-    "isActive": true,
-    "id": "21c44cc1-06eb-4116-ad24-e579c5cec1ce",
-    "createdAt": "2025-09-14T16:41:03.368Z"
   },
   {
     "name": "Test Product v0fyR",
@@ -30,33 +20,13 @@
     "createdAt": "2025-09-14T16:43:07.995Z"
   },
   {
-    "name": "SEO",
-    "sku": "seo1",
+    "name": "Advanced SEO",
+    "sku": "seo2",
     "price": "999990",
     "taxRate": "18",
-    "description": null,
+    "description": "Premium SEO package",
     "isActive": true,
     "id": "18a51155-cfbf-416f-a92b-7d16bdb24309",
     "createdAt": "2025-09-14T16:46:45.396Z"
-  },
-  {
-    "name": "SEO",
-    "sku": "seo1",
-    "price": "990",
-    "taxRate": "18",
-    "description": null,
-    "isActive": true,
-    "id": "891e128e-7e17-4edb-bdee-c7a570f4ae68",
-    "createdAt": "2025-09-14T16:47:14.337Z"
-  },
-  {
-    "name": "Sharma Ankit",
-    "sku": "seo1",
-    "price": "440",
-    "taxRate": "18",
-    "description": null,
-    "isActive": true,
-    "id": "dbd63c0f-e596-4824-a0fd-0b605fe04d2a",
-    "createdAt": "2025-09-14T16:54:26.301Z"
   }
 ]

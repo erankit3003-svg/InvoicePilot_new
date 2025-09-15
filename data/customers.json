@@ -1,14 +1,5 @@
 [
   {
-    "name": "aaaaaaaaaa",
-    "email": "er.ankit30@gmail.com",
-    "phone": "08950115607",
-    "address": "House No-100, Sainik Vihar\nJandly",
-    "gstId": "",
-    "id": "cb03a788-c52f-4a1c-aa43-4b99d116d978",
-    "createdAt": "2025-09-14T16:36:21.128Z"
-  },
-  {
     "name": "Sharma Ankit",
     "email": "er.ankit30@gmail.com",
     "phone": "08950115607",
@@ -18,12 +9,12 @@
     "createdAt": "2025-09-14T16:39:34.762Z"
   },
   {
-    "name": "Sharma Ankit",
-    "email": "er.ankit30@gmail.com",
-    "phone": "08950115607",
-    "address": "House No-100, Sainik Vihar\nJandly",
-    "gstId": "",
-    "id": "7c0d72eb-89e1-4680-8e92-a5f4b07d4118",
-    "createdAt": "2025-09-14T16:40:41.908Z"
+    "name": "Demo Customer",
+    "email": "demo@example.com",
+    "phone": "1234567890",
+    "address": "123 Demo Street\nDemo City",
+    "gstId": "22AAAAA0000A1Z5",
+    "id": "cb03a788-c52f-4a1c-aa43-4b99d116d978",
+    "createdAt": "2025-09-14T16:36:21.128Z"
   }
 ]
