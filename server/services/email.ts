@@ -62,10 +62,11 @@ export class EmailService {
         <p>Thank you for your business!</p>
         <hr style="margin: 20px 0; border: none; border-top: 1px solid #e5e5e5;">
         <p style="color: #666; font-size: 12px;">
-          InvoicePro<br>
-          123 Business Street<br>
-          City, State 12345<br>
-          contact@invoicepro.com
+          <h1>Design 4 you</h1>
+              Shop no 44 to 46</br>
+              Kheri Markanda, Kurukshetra</br>
+              Haryana</br>
+              +91-92542-22221</br>
         </p>
       </div>
     `;

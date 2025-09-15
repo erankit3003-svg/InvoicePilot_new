@@ -22,10 +22,11 @@ export function InvoicePDF({ invoice, customer }: InvoicePDFProps) {
             <span className="text-2xl font-bold text-gray-900">InvoicePro</span>
           </div>
           <div className="text-gray-600 text-sm">
-            <p>123 Business Street</p>
-            <p>City, State 12345</p>
-            <p>contact@invoicepro.com</p>
-            <p>+1 (555) 123-4567</p>
+            {/* <h1>Design 4 you</h1> */}
+              <p>Shop no 44 to 46</p>
+              <p>Kheri Markanda, Kurukshetra</p>
+              <p>Haryana</p>
+              <p>+91-92542-22221</p>
           </div>
         </div>
         <div className="text-right">

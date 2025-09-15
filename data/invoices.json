@@ -19,5 +19,142 @@
     "id": "4d806610-d97e-4336-9817-c86113229d7b",
     "createdAt": "2025-09-14T16:36:44.073Z",
     "updatedAt": "2025-09-15T10:44:09.045Z"
+  },
+  {
+    "invoiceNumber": "INV-2025-002",
+    "customerId": "9a9de40a-a23a-4293-b306-0eed815db2e9",
+    "items": [
+      {
+        "productId": "21c44cc1-06eb-4116-ad24-e579c5cec1ce",
+        "productName": "SEO",
+        "sku": "seo1",
+        "quantity": 1,
+        "price": 9999999,
+        "discount": 0,
+        "total": 9999999
+      }
+    ],
+    "subtotal": "9999999",
+    "taxAmount": "1799999.82",
+    "discountAmount": "0",
+    "total": "11799998.82",
+    "status": "pending",
+    "paymentStatus": "unpaid",
+    "dueDate": "2025-10-15T00:00:00.000Z",
+    "id": "e1d3eedb-9255-41bf-a65d-7e38822db6e2",
+    "createdAt": "2025-09-15T11:18:12.269Z",
+    "updatedAt": "2025-09-15T11:18:12.269Z"
+  },
+  {
+    "invoiceNumber": "INV-2025-003",
+    "customerId": "7c0d72eb-89e1-4680-8e92-a5f4b07d4118",
+    "items": [
+      {
+        "productId": "0c01e1c6-0132-4a44-bc4d-65ffd4de6d34",
+        "productName": "Test Product v0fyR",
+        "sku": "SKU-s6K9vM",
+        "quantity": 6,
+        "price": 29.99,
+        "discount": 3,
+        "total": 174.5418
+      }
+    ],
+    "subtotal": "179.94",
+    "taxAmount": "17.454179999999997",
+    "discountAmount": "5.398199999999999",
+    "total": "191.99598",
+    "status": "pending",
+    "paymentStatus": "unpaid",
+    "dueDate": "2025-10-15T00:00:00.000Z",
+    "id": "6679c284-1c7e-43f6-ade1-ea13d7a9a318",
+    "createdAt": "2025-09-15T11:25:40.771Z",
+    "updatedAt": "2025-09-15T11:25:40.771Z"
+  },
+  {
+    "invoiceNumber": "INV-2025-004",
+    "customerId": "9a9de40a-a23a-4293-b306-0eed815db2e9",
+    "items": [
+      {
+        "productId": "0c01e1c6-0132-4a44-bc4d-65ffd4de6d34",
+        "quantity": 5,
+        "discount": 0
+      },
+      {
+        "productId": "bd51d838-ce2e-41b3-9843-f1368912b4d0",
+        "quantity": 1,
+        "discount": 0
+      },
+      {
+        "productId": "18a51155-cfbf-416f-a92b-7d16bdb24309",
+        "quantity": 1,
+        "discount": 0
+      },
+      {
+        "productId": "dbd63c0f-e596-4824-a0fd-0b605fe04d2a",
+        "quantity": 1,
+        "discount": 0
+      },
+      {
+        "productId": "21c44cc1-06eb-4116-ad24-e579c5cec1ce",
+        "quantity": 1,
+        "discount": 0
+      }
+    ],
+    "subtotal": "149.95",
+    "taxAmount": "14.995",
+    "discountAmount": "0",
+    "total": "164.945",
+    "status": "pending",
+    "paymentStatus": "unpaid",
+    "dueDate": "2025-10-12",
+    "id": "0d993271-821a-470d-8b1d-42ac86632f9c",
+    "createdAt": "2025-09-15T11:31:16.967Z",
+    "updatedAt": "2025-09-15T14:36:23.070Z"
+  },
+  {
+    "invoiceNumber": "INV-2025-005",
+    "customerId": "9a9de40a-a23a-4293-b306-0eed815db2e9",
+    "items": [
+      {
+        "productId": "0c01e1c6-0132-4a44-bc4d-65ffd4de6d34",
+        "quantity": 10,
+        "discount": 10
+      },
+      {
+        "productId": "21c44cc1-06eb-4116-ad24-e579c5cec1ce",
+        "quantity": 1,
+        "discount": 0
+      },
+      {
+        "productId": "0c01e1c6-0132-4a44-bc4d-65ffd4de6d34",
+        "quantity": 1,
+        "discount": 0
+      },
+      {
+        "productId": "dbd63c0f-e596-4824-a0fd-0b605fe04d2a",
+        "quantity": 1,
+        "discount": 0
+      },
+      {
+        "productId": "18a51155-cfbf-416f-a92b-7d16bdb24309",
+        "quantity": 1,
+        "discount": 0
+      },
+      {
+        "productId": "dbd63c0f-e596-4824-a0fd-0b605fe04d2a",
+        "quantity": 1,
+        "discount": 0
+      }
+    ],
+    "subtotal": "299.9",
+    "taxAmount": "26.990999999999996",
+    "discountAmount": "29.99",
+    "total": "296.90099999999995",
+    "status": "pending",
+    "paymentStatus": "unpaid",
+    "dueDate": "2025-10-15",
+    "id": "f468bc98-82b5-4f89-86dc-c038932c2d74",
+    "createdAt": "2025-09-15T11:37:26.901Z",
+    "updatedAt": "2025-09-15T14:37:17.029Z"
   }
 ]
