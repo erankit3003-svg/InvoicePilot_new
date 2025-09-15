@@ -254,8 +254,18 @@ export default function Invoices() {
                               <Button
                                 variant="ghost"
                                 size="sm"
+                                onClick={() => window.open(`/api/invoices/${invoice.id}/view`, '_blank')}
+                                data-testid={`view-invoice-${invoice.id}`}
+                                title="View Invoice"
+                              >
+                                <Eye className="w-4 h-4" />
+                              </Button>
+                              <Button
+                                variant="ghost"
+                                size="sm"
                                 onClick={() => handleDownloadPdf(invoice.id)}
                                 data-testid={`download-pdf-${invoice.id}`}
+                                title="Download PDF"
                               >
                                 <Download className="w-4 h-4" />
                               </Button>
