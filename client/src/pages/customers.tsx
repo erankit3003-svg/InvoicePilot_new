@@ -19,7 +19,9 @@ export default function Customers() {
   const queryClient = useQueryClient();
 
   const { data: customers, isLoading } = useQuery<Customer[]>({
-    queryKey: ["/api/customers", { search: searchQuery }],
+    queryKey: searchQuery 
+      ? [`/api/customers?search=${encodeURIComponent(searchQuery)}`]
+      : ["/api/customers"],
   });
 
   const deleteCustomerMutation = useMutation({

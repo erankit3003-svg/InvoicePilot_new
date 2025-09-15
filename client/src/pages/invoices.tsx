@@ -25,7 +25,9 @@ export default function Invoices() {
   const queryClient = useQueryClient();
 
   const { data: invoices, isLoading } = useQuery<EnrichedInvoice[]>({
-    queryKey: ["/api/invoices", { search: searchQuery }],
+    queryKey: searchQuery 
+      ? [`/api/invoices?search=${encodeURIComponent(searchQuery)}`]
+      : ["/api/invoices"],
   });
 
   const downloadPdfMutation = useMutation({
