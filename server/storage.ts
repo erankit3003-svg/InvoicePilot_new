@@ -13,6 +13,12 @@ import {
 import { randomUUID } from "crypto";
 import fs from "fs/promises";
 import path from "path";
+import CryptoJS from "crypto-js";
+
+// Simple password hashing utility using SHA-256
+function hashPassword(password: string): string {
+  return CryptoJS.SHA256(password).toString();
+}
 
 const DATA_DIR = path.resolve(process.cwd(), "data");
 
@@ -98,7 +104,7 @@ export class JSONStorage implements IStorage {
     if (users.length === 0) {
       await this.createUser({
         username: "admin",
-        password: "admin123", // In production, this should be hashed
+        password: hashPassword("admin123"), // Hash the default password
         email: "admin@invoicepro.com",
         role: "admin",
       });
@@ -147,7 +153,14 @@ export class JSONStorage implements IStorage {
     const index = users.findIndex((user) => user.id === id);
     if (index === -1) throw new Error("User not found");
     
-    users[index] = { ...users[index], ...updateData };
+    // Only update fields that are provided, preserve existing password if not provided
+    const fieldsToUpdate = { ...updateData };
+    if (fieldsToUpdate.password === undefined) {
+      // Don't modify the existing password
+      delete fieldsToUpdate.password;
+    }
+    
+    users[index] = { ...users[index], ...fieldsToUpdate };
     await this.writeJsonFile(this.usersFile, users);
     return users[index];
   }

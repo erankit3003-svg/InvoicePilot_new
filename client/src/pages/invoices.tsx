@@ -130,18 +130,31 @@ export default function Invoices() {
     sendEmailMutation.mutate(invoiceId);
   };
 
-  const getStatusColor = (status: string) => {
+  const getInvoiceStatusColor = (status: string) => {
     switch (status.toLowerCase()) {
-      case "paid":
-        return "bg-green-100 text-green-800";
       case "pending":
-        return "bg-orange-100 text-orange-800";
+        return "bg-orange-100 text-orange-800 dark:bg-orange-900 dark:text-orange-200";
+      case "sent":
+        return "bg-blue-100 text-blue-800 dark:bg-blue-900 dark:text-blue-200";
       case "overdue":
-        return "bg-red-100 text-red-800";
-      case "partial":
-        return "bg-blue-100 text-blue-800";
+        return "bg-red-100 text-red-800 dark:bg-red-900 dark:text-red-200";
+      case "cancelled":
+        return "bg-gray-100 text-gray-800 dark:bg-gray-800 dark:text-gray-200";
       default:
-        return "bg-gray-100 text-gray-800";
+        return "bg-gray-100 text-gray-800 dark:bg-gray-800 dark:text-gray-200";
+    }
+  };
+
+  const getPaymentStatusColor = (paymentStatus: string) => {
+    switch (paymentStatus.toLowerCase()) {
+      case "paid":
+        return "bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-200";
+      case "unpaid":
+        return "bg-red-100 text-red-800 dark:bg-red-900 dark:text-red-200";
+      case "partial":
+        return "bg-yellow-100 text-yellow-800 dark:bg-yellow-900 dark:text-yellow-200";
+      default:
+        return "bg-gray-100 text-gray-800 dark:bg-gray-800 dark:text-gray-200";
     }
   };
 
@@ -242,9 +255,14 @@ export default function Invoices() {
                             </div>
                           </td>
                           <td className="px-4 py-4 whitespace-nowrap">
-                            <Badge className={getStatusColor(invoice.paymentStatus)}>
-                              {invoice.paymentStatus}
-                            </Badge>
+                            <div className="flex flex-col gap-1">
+                              <Badge className={getInvoiceStatusColor(invoice.status)}>
+                                {invoice.status}
+                              </Badge>
+                              <Badge variant="outline" className={`text-xs ${getPaymentStatusColor(invoice.paymentStatus)}`}>
+                                {invoice.paymentStatus}
+                              </Badge>
+                            </div>
                           </td>
                           <td className="px-4 py-4 whitespace-nowrap text-sm text-muted-foreground">
                             {new Date(invoice.createdAt!).toLocaleDateString()}

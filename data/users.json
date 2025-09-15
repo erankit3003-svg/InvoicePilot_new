@@ -6,5 +6,13 @@
     "role": "admin",
     "id": "c5fe9ee4-1ef3-4a37-9b34-b3105480d843",
     "createdAt": "2025-09-14T16:32:35.787Z"
+  },
+  {
+    "username": "testuser",
+    "password": "7e6e0c3079a08c5cc6036789b57e951f65f82383913ba1a49ae992544f1b4b6e",
+    "email": "updated@example.com",
+    "role": "admin",
+    "id": "d7c1752d-17e0-4da0-b364-5114f41f117b",
+    "createdAt": "2025-09-15T15:32:38.915Z"
   }
 ]

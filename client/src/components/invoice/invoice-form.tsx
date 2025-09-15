@@ -27,6 +27,8 @@ const invoiceItemSchema = z.object({
 const invoiceFormSchema = z.object({
   customerId: z.string().min(1, "Customer is required"),
   dueDate: z.string().min(1, "Due date is required"),
+  status: z.string().default("pending"),
+  paymentStatus: z.string().default("unpaid"),
   items: z.array(invoiceItemSchema).min(1, "At least one item is required"),
 });
 
@@ -55,6 +57,8 @@ export function InvoiceForm({ invoice, onSuccess, onCancel }: InvoiceFormProps) 
     defaultValues: {
       customerId: "",
       dueDate: new Date(Date.now() + 30 * 24 * 60 * 60 * 1000).toISOString().split('T')[0], // 30 days from now
+      status: "pending",
+      paymentStatus: "unpaid",
       items: [{ productId: "", quantity: 1, discount: 0 }],
     },
   });
@@ -71,6 +75,8 @@ export function InvoiceForm({ invoice, onSuccess, onCancel }: InvoiceFormProps) 
       form.reset({
         customerId: invoice.customerId,
         dueDate: new Date(invoice.dueDate).toISOString().split('T')[0],
+        status: invoice.status || "pending",
+        paymentStatus: invoice.paymentStatus || "unpaid",
         items: items.map(item => ({
           productId: item.productId,
           quantity: item.quantity,
@@ -228,6 +234,43 @@ export function InvoiceForm({ invoice, onSuccess, onCancel }: InvoiceFormProps) 
               {form.formState.errors.dueDate.message}
             </p>
           )}
+        </div>
+      </div>
+
+      {/* Status Fields */}
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div>
+          <Label htmlFor="status">Invoice Status</Label>
+          <Select
+            value={form.watch("status")}
+            onValueChange={(value) => form.setValue("status", value)}
+          >
+            <SelectTrigger data-testid="status-select">
+              <SelectValue placeholder="Select status..." />
+            </SelectTrigger>
+            <SelectContent>
+              <SelectItem value="pending">Pending</SelectItem>
+              <SelectItem value="sent">Sent</SelectItem>
+              <SelectItem value="overdue">Overdue</SelectItem>
+              <SelectItem value="cancelled">Cancelled</SelectItem>
+            </SelectContent>
+          </Select>
+        </div>
+        <div>
+          <Label htmlFor="paymentStatus">Payment Status</Label>
+          <Select
+            value={form.watch("paymentStatus")}
+            onValueChange={(value) => form.setValue("paymentStatus", value)}
+          >
+            <SelectTrigger data-testid="payment-status-select">
+              <SelectValue placeholder="Select payment status..." />
+            </SelectTrigger>
+            <SelectContent>
+              <SelectItem value="unpaid">Unpaid</SelectItem>
+              <SelectItem value="paid">Paid</SelectItem>
+              <SelectItem value="partial">Partially Paid</SelectItem>
+            </SelectContent>
+          </Select>
         </div>
       </div>
 
