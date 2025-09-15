@@ -20,7 +20,9 @@ export default function Products() {
   const queryClient = useQueryClient();
 
   const { data: products, isLoading } = useQuery<Product[]>({
-    queryKey: ["/api/products", { search: searchQuery }],
+    queryKey: searchQuery 
+      ? [`/api/products?search=${encodeURIComponent(searchQuery)}`]
+      : ["/api/products"],
   });
 
   const deleteProductMutation = useMutation({

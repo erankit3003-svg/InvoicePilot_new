@@ -1,16 +1,12 @@
 [
   {
     "invoiceNumber": "INV-2025-001",
-    "customerId": "cb03a788-c52f-4a1c-aa43-4b99d116d978",
+    "customerId": "9a9de40a-a23a-4293-b306-0eed815db2e9",
     "items": [
       {
         "productId": "bd51d838-ce2e-41b3-9843-f1368912b4d0",
-        "productName": "SEO",
-        "sku": "seo1",
         "quantity": 1,
-        "price": 100000,
-        "discount": 10,
-        "total": 90000
+        "discount": 10
       }
     ],
     "subtotal": "100000",
@@ -19,9 +15,9 @@
     "total": "106200",
     "status": "pending",
     "paymentStatus": "unpaid",
-    "dueDate": "2025-10-14T00:00:00.000Z",
+    "dueDate": "2025-10-14",
     "id": "4d806610-d97e-4336-9817-c86113229d7b",
     "createdAt": "2025-09-14T16:36:44.073Z",
-    "updatedAt": "2025-09-14T16:36:44.073Z"
+    "updatedAt": "2025-09-15T10:44:09.045Z"
   }
 ]

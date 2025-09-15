@@ -294,7 +294,7 @@ export default function Dashboard() {
                               {product.sales} sold
                             </div>
                             <div className="text-xs text-green-600">
-                              ${product.revenue.toFixed(2)}
+                              ${Number(product.revenue || 0).toFixed(2)}
                             </div>
                           </div>
                         </div>

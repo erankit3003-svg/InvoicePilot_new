@@ -1,5 +1,5 @@
-import jsPDF from "jspdf";
-import "jspdf-autotable";
+import { jsPDF } from "jspdf";
+import autoTable from "jspdf-autotable";
 import { Invoice, Customer, InvoiceItem } from "@shared/schema";
 
 declare module "jspdf" {
@@ -10,6 +10,8 @@ declare module "jspdf" {
 
 export class PDFService {
   static async generateInvoicePDF(invoice: Invoice, customer: Customer): Promise<Buffer> {
+    console.log('PDF Generation - Invoice items:', JSON.stringify(invoice.items, null, 2));
+    
     const doc = new jsPDF();
     const pageWidth = doc.internal.pageSize.width;
     
@@ -55,28 +57,41 @@ export class PDFService {
       doc.text(`GST ID: ${customer.gstId}`, 20, 123);
     }
     
-    // Invoice items table
+    // Invoice items - simple text-based table
     const items = invoice.items as InvoiceItem[];
-    const tableData = items.map((item) => [
-      item.productName,
-      item.sku,
-      item.quantity.toString(),
-      `$${item.price.toFixed(2)}`,
-      `${item.discount}%`,
-      `$${item.total.toFixed(2)}`,
-    ]);
+    let currentY = 140;
     
-    doc.autoTable({
-      startY: 140,
-      head: [["Product", "SKU", "Qty", "Price", "Discount", "Total"]],
-      body: tableData,
-      theme: "striped",
-      headStyles: { fillColor: [66, 139, 202] },
-      styles: { fontSize: 9 },
+    // Table headers
+    doc.setFontSize(10);
+    doc.setFont("helvetica", "bold");
+    doc.text("Product", 20, currentY);
+    doc.text("SKU", 100, currentY);
+    doc.text("Qty", 130, currentY);
+    doc.text("Price", 150, currentY);
+    doc.text("Discount", 180, currentY);
+    doc.text("Total", 210, currentY);
+    
+    // Draw header line
+    doc.line(20, currentY + 2, 240, currentY + 2);
+    currentY += 10;
+    
+    // Table rows
+    doc.setFont("helvetica", "normal");
+    items.forEach((item) => {
+      doc.text(item.productName || 'N/A', 20, currentY);
+      doc.text(item.sku || 'N/A', 100, currentY);
+      doc.text((item.quantity || 0).toString(), 130, currentY);
+      doc.text(`$${Number(item.price || 0).toFixed(2)}`, 150, currentY);
+      doc.text(`${item.discount || 0}%`, 180, currentY);
+      doc.text(`$${Number(item.total || 0).toFixed(2)}`, 210, currentY);
+      currentY += 10;
     });
     
+    // Draw bottom line
+    doc.line(20, currentY, 240, currentY);
+    
     // Totals
-    const finalY = (doc as any).lastAutoTable.finalY + 10;
+    const finalY = currentY + 20;
     const totalsX = pageWidth - 80;
     
     doc.setFontSize(10);
