@@ -54,6 +54,13 @@ export const insertUserSchema = createInsertSchema(users).omit({
   createdAt: true,
 });
 
+export const updateUserSchema = createInsertSchema(users).omit({
+  id: true,
+  createdAt: true,
+}).partial().extend({
+  password: z.string().min(1, "Password must be at least 1 character").optional(),
+});
+
 export const insertCustomerSchema = createInsertSchema(customers).omit({
   id: true,
   createdAt: true,
@@ -71,6 +78,7 @@ export const insertInvoiceSchema = createInsertSchema(invoices).omit({
 });
 
 export type InsertUser = z.infer<typeof insertUserSchema>;
+export type UpdateUser = z.infer<typeof updateUserSchema>;
 export type User = typeof users.$inferSelect;
 
 export type InsertCustomer = z.infer<typeof insertCustomerSchema>;

@@ -1,9 +1,20 @@
 import type { Express } from "express";
 import { createServer, type Server } from "http";
 import { storage } from "./storage";
-import { insertCustomerSchema, insertProductSchema, insertInvoiceSchema, InvoiceItem, Invoice, Customer } from "@shared/schema";
+import { insertUserSchema, updateUserSchema, insertCustomerSchema, insertProductSchema, insertInvoiceSchema, InvoiceItem, Invoice, Customer } from "@shared/schema";
 import { PDFService } from "./services/pdf";
 import { EmailService } from "./services/email";
+import CryptoJS from "crypto-js";
+
+// Simple password hashing utility using SHA-256
+function hashPassword(password: string): string {
+  return CryptoJS.SHA256(password).toString();
+}
+
+// Verify password against hash
+function verifyPassword(password: string, hash: string): boolean {
+  return hashPassword(password) === hash;
+}
 
 function generateInvoiceHTML(invoice: Invoice, customer: Customer): string {
   const items = invoice.items as InvoiceItem[];
@@ -125,8 +136,13 @@ export async function registerRoutes(app: Express): Promise<Server> {
 
   app.post("/api/users", async (req, res) => {
     try {
-      const userData = req.body;
-      const user = await storage.createUser(userData);
+      const userData = insertUserSchema.parse(req.body);
+      // Hash the password before storing
+      const hashedUserData = {
+        ...userData,
+        password: hashPassword(userData.password),
+      };
+      const user = await storage.createUser(hashedUserData);
       const { password, ...userResponse } = user;
       res.status(201).json(userResponse);
     } catch (error) {
@@ -137,8 +153,14 @@ export async function registerRoutes(app: Express): Promise<Server> {
   app.put("/api/users/:id", async (req, res) => {
     try {
       const { id } = req.params;
-      const userData = req.body;
-      const user = await storage.updateUser(id, userData);
+      const userData = updateUserSchema.parse(req.body);
+      
+      // Hash password if provided
+      const updateData = userData.password 
+        ? { ...userData, password: hashPassword(userData.password) }
+        : userData;
+      
+      const user = await storage.updateUser(id, updateData);
       const { password, ...userResponse } = user;
       res.json(userResponse);
     } catch (error) {
@@ -166,7 +188,7 @@ export async function registerRoutes(app: Express): Promise<Server> {
       const { username, password } = req.body;
       const user = await storage.getUserByUsername(username);
       
-      if (!user || user.password !== password) {
+      if (!user || !verifyPassword(password, user.password)) {
         return res.status(401).json({ message: "Invalid credentials" });
       }
       
@@ -356,7 +378,7 @@ export async function registerRoutes(app: Express): Promise<Server> {
 
   app.post("/api/invoices", async (req, res) => {
     try {
-      const { customerId, items, dueDate } = req.body;
+      const { customerId, items, dueDate, status, paymentStatus } = req.body;
       
       // Calculate totals
       let subtotal = 0;
@@ -402,8 +424,8 @@ export async function registerRoutes(app: Express): Promise<Server> {
         taxAmount: taxAmount.toString(),
         discountAmount: discountAmount.toString(),
         total: total.toString(),
-        status: "pending",
-        paymentStatus: "unpaid",
+        status: status || "pending",
+        paymentStatus: paymentStatus || "unpaid",
         dueDate: new Date(dueDate),
       };
       

@@ -10,7 +10,8 @@ import {
   BarChart3, 
   User,
   LogOut,
-  MoreVertical
+  MoreVertical,
+  UserCheck
 } from "lucide-react";
 import {
   DropdownMenu,
@@ -27,7 +28,8 @@ export function Sidebar() {
     { name: "Dashboard", href: "/dashboard", icon: LayoutDashboard },
     { name: "Invoices", href: "/invoices", icon: FileText },
     { name: "Products", href: "/products", icon: Package },
-    { name: "Customers", href: "/customers", icon: Users },
+    { name: "Customers", href: "/customers", icon: UserCheck },
+    { name: "Users", href: "/users", icon: Users },
     { name: "Reports", href: "/reports", icon: BarChart3 },
   ];
 
