@@ -111,7 +111,7 @@ export class PDFGenerator {
     doc.text("Payment Terms:", 20, finalY + 50);
     doc.text("Payment is due within 30 days of invoice date.", 20, finalY + 57);
     doc.text("Thank you for your business!", 20, finalY + 70);
-    
+    doc.text("© 2025 InvoicePro – A Product by codEdges Technologies | www.codedges.com", 20, finalY + 80);
     // Download the PDF
     doc.save(`invoice-${invoice.invoiceNumber}.pdf`);
   }
@@ -241,7 +241,7 @@ export class PDFGenerator {
           
           <div class="payment-terms">
             <h4>Payment Terms:</h4>
-            <p>Payment is due within 30 days of invoice date. Late payments may incur additional charges.</p>
+            <p>Payment is due within 07 days of invoice date. Late payments may incur additional charges.</p>
             <p>Thank you for your business!</p>
           </div>
         </body>

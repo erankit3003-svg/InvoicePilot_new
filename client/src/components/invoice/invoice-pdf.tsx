@@ -132,7 +132,7 @@ export function InvoicePDF({ invoice, customer }: InvoicePDFProps) {
       {/* Payment Terms */}
       <div className="text-gray-600 text-sm">
         <h4 className="font-semibold text-gray-900 mb-2">Payment Terms:</h4>
-        <p>Payment is due within 30 days of invoice date. Late payments may incur additional charges.</p>
+        <p>Payment is due within 07 days of invoice date. Late payments may incur additional charges.</p>
         <p className="mt-2">Thank you for your business!</p>
       </div>
     </div>

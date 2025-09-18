@@ -1,8 +1,8 @@
 [
   {
-    "name": "SEO Service",
+    "name": "SEO Services ",
     "sku": "seo1",
-    "price": "100000",
+    "price": "1",
     "taxRate": "18",
     "description": "Professional SEO service",
     "isActive": true,
@@ -12,7 +12,7 @@
   {
     "name": "Test Product v0fyR",
     "sku": "SKU-s6K9vM",
-    "price": "29.99",
+    "price": "1",
     "taxRate": "10",
     "description": "A description for the new test product.",
     "isActive": true,
@@ -22,7 +22,7 @@
   {
     "name": "Advanced SEO",
     "sku": "seo2",
-    "price": "999990",
+    "price": "1",
     "taxRate": "18",
     "description": "Premium SEO package",
     "isActive": true,

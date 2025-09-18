@@ -149,13 +149,32 @@ export function InvoiceForm({ invoice, onSuccess, onCancel }: InvoiceFormProps) 
     },
   });
 
-  const onSubmit = (data: InvoiceFormData) => {
+ /*  const onSubmit = (data: InvoiceFormData) => {
     if (invoice) {
       updateInvoiceMutation.mutate(data);
     } else {
       createInvoiceMutation.mutate(data);
     }
+  }; */
+  //-----------------------------------------------------------------
+const onSubmit = (data: InvoiceFormData) => {
+  const totals = calculateTotals();
+
+  const payload = {
+    ...data,
+    subtotal: +totals.subtotal.toFixed(2),
+    discountAmount: +totals.totalDiscount.toFixed(2),
+    taxAmount: +totals.totalTax.toFixed(2),
+    total: +totals.total.toFixed(2),
   };
+
+  if (invoice) {
+    updateInvoiceMutation.mutate(payload);
+  } else {
+    createInvoiceMutation.mutate(payload);
+  }
+};
+//-------------------------------------------------------------------
 
   const addItem = () => {
     append({ productId: "", quantity: 1, discount: 0 });
@@ -167,8 +186,10 @@ export function InvoiceForm({ invoice, onSuccess, onCancel }: InvoiceFormProps) 
 
   const watchedItems = form.watch("items");
 
+
+
   // Calculate totals
-  const calculateTotals = () => {
+/*   const calculateTotals = () => {
     let subtotal = 0;
     let totalTax = 0;
     let totalDiscount = 0;
@@ -190,7 +211,37 @@ export function InvoiceForm({ invoice, onSuccess, onCancel }: InvoiceFormProps) 
     const total = subtotal - totalDiscount + totalTax;
 
     return { subtotal, totalTax, totalDiscount, total };
+  }; */
+
+  const calculateTotals = () => {
+  let subtotal = 0;
+  let totalTax = 0;
+  let totalDiscount = 0;
+
+  watchedItems.forEach((item) => {
+    const product = products?.find((p) => p.id === item.productId);
+    if (!product) return;
+
+    const price = Number(product.price) || 0;
+    const taxRate = Number(product.taxRate) || 0;
+
+    const itemSubtotal = item.quantity * price;
+    const itemDiscount = (itemSubtotal * (item.discount || 0)) / 100;
+    const itemAfterDiscount = itemSubtotal - itemDiscount;
+    const itemTax = (itemAfterDiscount * taxRate) / 100;
+
+    subtotal += itemSubtotal;
+    totalDiscount += itemDiscount;
+    totalTax += itemTax;
+  });
+
+  return {
+    subtotal,
+    totalTax,
+    totalDiscount,
+    total: subtotal - totalDiscount + totalTax,
   };
+};
 
   const { subtotal, totalTax, totalDiscount, total } = calculateTotals();
 

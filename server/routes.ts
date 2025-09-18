@@ -115,7 +115,7 @@ function generateInvoiceHTML(invoice: Invoice, customer: Customer): string {
 
       <div class="footer">
         <h4>Payment Terms:</h4>
-        <p>Payment is due within 30 days of invoice date.<br>
+        <p>Payment is due within 07 days of invoice date.<br>
         Thank you for your business!</p>
       </div>
     </body>
