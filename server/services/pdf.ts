@@ -27,10 +27,10 @@ export class PDFService {
     
     doc.setFontSize(10);
     doc.setFont("helvetica", "normal");
-    doc.text("123 Business Street", 20, 40);
-    doc.text("City, State 12345", 20, 47);
-    doc.text("contact@invoicepro.com", 20, 54);
-    doc.text("+1 (555) 123-4567", 20, 61);
+    doc.text("Design 4 you", 20, 40);
+    doc.text("Shop no 44 to 46", 20, 47);
+    doc.text("Kheri Markanda, Kurukshetra", 20, 54);
+    doc.text("+91-92542-22221", 20, 61);
     
     // Invoice details
     doc.setFontSize(10);
@@ -105,10 +105,9 @@ export class PDFService {
     // Payment terms
     doc.setFontSize(9);
     doc.setFont("helvetica", "normal");
-    doc.text("Payment Terms:", 20, finalY + 50);
-    doc.text("Payment is due within 30 days of invoice date.", 20, finalY + 57);
-    doc.text("Thank you for your business!", 20, finalY + 70);
-    
+    doc.text("Payment Terms: Payment is due within 07 days of invoice date.", 20, finalY + 50);
+    doc.text("Thank you for your business!", 20, finalY + 60); //InvoicePro – A Product by codEdges Technologies
+    doc.text("© 2025 InvoicePro – A Product by codEdges Technologies | www.codedges.com", 20, finalY + 80);
     return Buffer.from(doc.output("arraybuffer"));
   }
 }

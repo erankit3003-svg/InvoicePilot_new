@@ -1,23 +1,71 @@
 [
   {
     "invoiceNumber": "INV-2025-001",
-    "customerId": "9a9de40a-a23a-4293-b306-0eed815db2e9",
+    "customerId": "7f227995-db15-426f-8295-cc2d6ffbb235",
     "items": [
       {
         "productId": "bd51d838-ce2e-41b3-9843-f1368912b4d0",
+        "productName": "SEO Services ",
+        "sku": "seo1",
         "quantity": 1,
-        "discount": 10
+        "price": 1,
+        "discount": 0,
+        "total": 1
+      },
+      {
+        "productId": "0c01e1c6-0132-4a44-bc4d-65ffd4de6d34",
+        "productName": "Test Product v0fyR",
+        "sku": "SKU-s6K9vM",
+        "quantity": 1,
+        "price": 1,
+        "discount": 0,
+        "total": 1
+      },
+      {
+        "productId": "18a51155-cfbf-416f-a92b-7d16bdb24309",
+        "productName": "Advanced SEO",
+        "sku": "seo2",
+        "quantity": 1,
+        "price": 1,
+        "discount": 0,
+        "total": 1
       }
     ],
-    "subtotal": "100000",
-    "taxAmount": "16200",
-    "discountAmount": "10000",
-    "total": "106200",
+    "subtotal": "3",
+    "taxAmount": "0.46",
+    "discountAmount": "0",
+    "total": "3.46",
     "status": "pending",
     "paymentStatus": "unpaid",
-    "dueDate": "2025-10-14",
-    "id": "4d806610-d97e-4336-9817-c86113229d7b",
-    "createdAt": "2025-09-14T16:36:44.073Z",
-    "updatedAt": "2025-09-15T10:44:09.045Z"
+    "dueDate": "2025-10-16T00:00:00.000Z",
+    "id": "3a88f7cb-e02a-42cc-ad37-7dad875603e8",
+    "createdAt": "2025-09-16T15:05:13.811Z",
+    "updatedAt": "2025-09-16T15:05:13.811Z"
+  },
+  {
+    "invoiceNumber": "INV-2025-002",
+    "customerId": "cb03a788-c52f-4a1c-aa43-4b99d116d978",
+    "items": [
+      {
+        "productId": "bd51d838-ce2e-41b3-9843-f1368912b4d0",
+        "quantity": 5555555,
+        "discount": 0
+      },
+      {
+        "productId": "0c01e1c6-0132-4a44-bc4d-65ffd4de6d34",
+        "quantity": 3,
+        "discount": 0
+      }
+    ],
+    "subtotal": 5555558,
+    "taxAmount": 1000000.2,
+    "discountAmount": 0,
+    "total": 6555558.2,
+    "status": "pending",
+    "paymentStatus": "unpaid",
+    "dueDate": "2025-10-16",
+    "id": "4cd21fef-0a3e-42df-885e-3d3598c68531",
+    "createdAt": "2025-09-16T15:07:07.474Z",
+    "updatedAt": "2025-09-16T15:07:24.853Z"
   }
 ]

@@ -46,11 +46,11 @@ function generateInvoiceHTML(invoice: Invoice, customer: Customer): string {
     <body>
       <div class="header">
         <div class="company-info">
-          <h1>InvoicePro</h1>
-          <p>123 Business Street<br>
-          City, State 12345<br>
-          contact@invoicepro.com<br>
-          +1 (555) 123-4567</p>
+           <h1>Design 4 you</h1>
+              <p>Shop no 44 to 46</p>
+              <p>Kheri Markanda, Kurukshetra</p>
+              <p>Haryana</p>
+              <p>+91-92542-22221</p>
         </div>
         <div class="invoice-info">
           <h2>INVOICE</h2>
@@ -115,7 +115,7 @@ function generateInvoiceHTML(invoice: Invoice, customer: Customer): string {
 
       <div class="footer">
         <h4>Payment Terms:</h4>
-        <p>Payment is due within 30 days of invoice date.<br>
+        <p>Payment is due within 07 days of invoice date.<br>
         Thank you for your business!</p>
       </div>
     </body>

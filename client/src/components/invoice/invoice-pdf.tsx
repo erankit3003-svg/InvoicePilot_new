@@ -22,10 +22,11 @@ export function InvoicePDF({ invoice, customer }: InvoicePDFProps) {
             <span className="text-2xl font-bold text-gray-900">InvoicePro</span>
           </div>
           <div className="text-gray-600 text-sm">
-            <p>123 Business Street</p>
-            <p>City, State 12345</p>
-            <p>contact@invoicepro.com</p>
-            <p>+1 (555) 123-4567</p>
+            {/* <h1>Design 4 you</h1> */}
+              <p>Shop no 44 to 46</p>
+              <p>Kheri Markanda, Kurukshetra</p>
+              <p>Haryana</p>
+              <p>+91-92542-22221</p>
           </div>
         </div>
         <div className="text-right">
@@ -131,7 +132,7 @@ export function InvoicePDF({ invoice, customer }: InvoicePDFProps) {
       {/* Payment Terms */}
       <div className="text-gray-600 text-sm">
         <h4 className="font-semibold text-gray-900 mb-2">Payment Terms:</h4>
-        <p>Payment is due within 30 days of invoice date. Late payments may incur additional charges.</p>
+        <p>Payment is due within 07 days of invoice date. Late payments may incur additional charges.</p>
         <p className="mt-2">Thank you for your business!</p>
       </div>
     </div>

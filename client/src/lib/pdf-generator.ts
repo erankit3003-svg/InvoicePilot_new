@@ -25,10 +25,10 @@ export class PDFGenerator {
     
     doc.setFontSize(10);
     doc.setFont("helvetica", "normal");
-    doc.text("123 Business Street", 20, 40);
-    doc.text("City, State 12345", 20, 47);
-    doc.text("contact@invoicepro.com", 20, 54);
-    doc.text("+1 (555) 123-4567", 20, 61);
+    doc.text("Design 4 you", 20, 40);
+    doc.text("Shop no 44 to 46", 20, 47);
+    doc.text("Kheri Markanda", 20, 54);
+    doc.text("+91-92542-22221", 20, 61);
     
     // Invoice details
     doc.setFontSize(10);
@@ -111,7 +111,7 @@ export class PDFGenerator {
     doc.text("Payment Terms:", 20, finalY + 50);
     doc.text("Payment is due within 30 days of invoice date.", 20, finalY + 57);
     doc.text("Thank you for your business!", 20, finalY + 70);
-    
+    doc.text("© 2025 InvoicePro – A Product by codEdges Technologies | www.codedges.com", 20, finalY + 80);
     // Download the PDF
     doc.save(`invoice-${invoice.invoiceNumber}.pdf`);
   }
@@ -170,11 +170,11 @@ export class PDFGenerator {
         <body>
           <div class="invoice-header">
             <div class="company-info">
-              <h1>InvoicePro</h1>
-              <p>123 Business Street</p>
-              <p>City, State 12345</p>
-              <p>contact@invoicepro.com</p>
-              <p>+1 (555) 123-4567</p>
+              <h1>Design 4 you</h1>
+              <p>Shop no 44 to 46</p>
+              <p>Kheri Markanda, Kurukshetra</p>
+              <p>Haryana</p>
+              <p>+91-92542-22221</p>
             </div>
             <div class="invoice-details">
               <h2>INVOICE</h2>
@@ -241,7 +241,7 @@ export class PDFGenerator {
           
           <div class="payment-terms">
             <h4>Payment Terms:</h4>
-            <p>Payment is due within 30 days of invoice date. Late payments may incur additional charges.</p>
+            <p>Payment is due within 07 days of invoice date. Late payments may incur additional charges.</p>
             <p>Thank you for your business!</p>
           </div>
         </body>
