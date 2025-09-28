@@ -86,9 +86,9 @@ function generateInvoiceHTML(invoice: Invoice, customer: Customer): string {
               <td>${item.productName}</td>
               <td>${item.sku}</td>
               <td>${item.quantity}</td>
-              <td>$${Number(item.price || 0).toFixed(2)}</td>
+              <td>Rs.${Number(item.price || 0).toFixed(2)}</td>
               <td>${item.discount || 0}%</td>
-              <td>$${Number(item.total || 0).toFixed(2)}</td>
+              <td>Rs.${Number(item.total || 0).toFixed(2)}</td>
             </tr>
           `).join('')}
         </tbody>
@@ -97,19 +97,19 @@ function generateInvoiceHTML(invoice: Invoice, customer: Customer): string {
       <div class="totals">
         <div class="total-row">
           <span>Subtotal:</span>
-          <span>$${parseFloat(invoice.subtotal).toFixed(2)}</span>
+          <span>Rs.${parseFloat(invoice.subtotal).toFixed(2)}</span>
         </div>
         <div class="total-row">
           <span>Tax:</span>
-          <span>$${parseFloat(invoice.taxAmount).toFixed(2)}</span>
+          <span>Rs.${parseFloat(invoice.taxAmount).toFixed(2)}</span>
         </div>
         <div class="total-row">
           <span>Discount:</span>
-          <span>$${parseFloat(invoice.discountAmount).toFixed(2)}</span>
+          <span>Rs.${parseFloat(invoice.discountAmount).toFixed(2)}</span>
         </div>
         <div class="total-row total-final">
           <span>Total:</span>
-          <span>$${parseFloat(invoice.total).toFixed(2)}</span>
+          <span>Rs.${parseFloat(invoice.total).toFixed(2)}</span>
         </div>
       </div>
 

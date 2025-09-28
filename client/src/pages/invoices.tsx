@@ -251,7 +251,7 @@ export default function Invoices() {
                           </td>
                           <td className="px-4 py-4 whitespace-nowrap">
                             <div className="text-sm text-foreground">
-                              ${parseFloat(invoice.total).toFixed(2)}
+                              ₹{parseFloat(invoice.total).toFixed(2)}
                             </div>
                           </td>
                           <td className="px-4 py-4 whitespace-nowrap">

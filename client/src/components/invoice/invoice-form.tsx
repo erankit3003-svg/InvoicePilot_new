@@ -358,7 +358,7 @@ const onSubmit = (data: InvoiceFormData) => {
                       <SelectContent>
                         {products?.map((product) => (
                           <SelectItem key={product.id} value={product.id}>
-                            {product.name} - ${product.price}
+                            {product.name} - ₹{product.price}
                           </SelectItem>
                         ))}
                       </SelectContent>
@@ -386,7 +386,7 @@ const onSubmit = (data: InvoiceFormData) => {
                   <div className="col-span-2">
                     <Label>Total</Label>
                     <div className="px-3 py-2 bg-muted rounded-md text-sm">
-                      ${itemTotal.toFixed(2)}
+                      ₹{itemTotal.toFixed(2)}
                     </div>
                   </div>
                   <div className="col-span-2">
@@ -417,28 +417,28 @@ const onSubmit = (data: InvoiceFormData) => {
         <CardContent>
           <div className="space-y-2">
             <div className="flex justify-between">
-              <span className="text-muted-foreground">Subtotal:</span>
-              <span className="text-foreground" data-testid="subtotal-amount">
-                ${subtotal.toFixed(2)}
+              <span className="text-blue-600 font-medium">Subtotal:</span>
+              <span className="text-blue-700 font-semibold" data-testid="subtotal-amount">
+                ₹{subtotal.toFixed(2)}
               </span>
             </div>
             <div className="flex justify-between">
-              <span className="text-muted-foreground">Discount:</span>
-              <span className="text-foreground" data-testid="discount-amount">
-                ${totalDiscount.toFixed(2)}
+              <span className="text-orange-600 font-medium">Discount:</span>
+              <span className="text-orange-700 font-semibold" data-testid="discount-amount">
+                ₹{totalDiscount.toFixed(2)}
               </span>
             </div>
             <div className="flex justify-between">
-              <span className="text-muted-foreground">Tax:</span>
-              <span className="text-foreground" data-testid="tax-amount">
-                ${totalTax.toFixed(2)}
+              <span className="text-purple-600 font-medium">Tax:</span>
+              <span className="text-purple-700 font-semibold" data-testid="tax-amount">
+                ₹{totalTax.toFixed(2)}
               </span>
             </div>
             <div className="border-t border-border pt-2">
               <div className="flex justify-between text-lg font-medium">
-                <span className="text-foreground">Total:</span>
-                <span className="text-foreground" data-testid="total-amount">
-                  ${total.toFixed(2)}
+                <span className="text-green-600 font-bold">Total:</span>
+                <span className="text-green-700 font-bold text-xl" data-testid="total-amount">
+                  ₹{total.toFixed(2)}
                 </span>
               </div>
             </div>

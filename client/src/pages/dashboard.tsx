@@ -105,7 +105,7 @@ export default function Dashboard() {
                   <div>
                     <p className="text-sm text-muted-foreground">Total Sales</p>
                     <p className="text-3xl font-bold text-foreground" data-testid="total-sales">
-                      ${metrics?.totalSales.toFixed(2) || "0.00"}
+                      ₹{metrics?.totalSales.toFixed(2) || "0.00"}
                     </p>
                     <p className="text-sm text-green-600 mt-1">
                       <TrendingUp className="w-3 h-3 mr-1 inline" />
@@ -145,7 +145,7 @@ export default function Dashboard() {
                   <div>
                     <p className="text-sm text-muted-foreground">Pending Payments</p>
                     <p className="text-3xl font-bold text-foreground" data-testid="pending-payments">
-                      ${metrics?.pendingPayments.toFixed(2) || "0.00"}
+                      ₹{metrics?.pendingPayments.toFixed(2) || "0.00"}
                     </p>
                     <p className="text-sm text-orange-600 mt-1">
                       <Clock className="w-3 h-3 mr-1 inline" />
@@ -240,7 +240,7 @@ export default function Dashboard() {
                               </td>
                               <td className="px-4 py-4 whitespace-nowrap">
                                 <div className="text-sm text-foreground">
-                                  ${parseFloat(invoice.total).toFixed(2)}
+                                  ₹{parseFloat(invoice.total).toFixed(2)}
                                 </div>
                               </td>
                               <td className="px-4 py-4 whitespace-nowrap">
@@ -294,7 +294,7 @@ export default function Dashboard() {
                               {product.sales} sold
                             </div>
                             <div className="text-xs text-green-600">
-                              ${Number(product.revenue || 0).toFixed(2)}
+                              ₹{Number(product.revenue || 0).toFixed(2)}
                             </div>
                           </div>
                         </div>

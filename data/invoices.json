@@ -67,5 +67,39 @@
     "id": "4cd21fef-0a3e-42df-885e-3d3598c68531",
     "createdAt": "2025-09-16T15:07:07.474Z",
     "updatedAt": "2025-09-16T15:07:24.853Z"
+  },
+  {
+    "invoiceNumber": "INV-2025-003",
+    "customerId": "7f227995-db15-426f-8295-cc2d6ffbb235",
+    "items": [
+      {
+        "productId": "0c01e1c6-0132-4a44-bc4d-65ffd4de6d34",
+        "productName": "Test Product v0fyR",
+        "sku": "SKU-s6K9vM",
+        "quantity": 1,
+        "price": 1,
+        "discount": 0,
+        "total": 1
+      },
+      {
+        "productId": "bd51d838-ce2e-41b3-9843-f1368912b4d0",
+        "productName": "SEO Services ",
+        "sku": "seo1",
+        "quantity": 1,
+        "price": 1,
+        "discount": 0,
+        "total": 1
+      }
+    ],
+    "subtotal": "2",
+    "taxAmount": "0.28",
+    "discountAmount": "0",
+    "total": "2.2800000000000002",
+    "status": "pending",
+    "paymentStatus": "unpaid",
+    "dueDate": "2025-10-28T00:00:00.000Z",
+    "id": "7aa1b64a-4adb-4bdb-8770-f3aa6b6efe81",
+    "createdAt": "2025-09-28T05:40:31.137Z",
+    "updatedAt": "2025-09-28T05:40:31.137Z"
   }
 ]
