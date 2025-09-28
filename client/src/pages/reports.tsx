@@ -254,7 +254,7 @@ export default function Reports() {
                     <div>
                       <p className="text-sm text-muted-foreground">Total Revenue</p>
                       <p className="text-2xl font-bold text-foreground" data-testid="total-revenue">
-                        ${reportMetrics.totalRevenue.toFixed(2)}
+                        ₹{reportMetrics.totalRevenue.toFixed(2)}
                       </p>
                     </div>
                     <div className="w-10 h-10 bg-green-100 rounded-lg flex items-center justify-center">
@@ -270,7 +270,7 @@ export default function Reports() {
                     <div>
                       <p className="text-sm text-muted-foreground">Paid Revenue</p>
                       <p className="text-2xl font-bold text-foreground" data-testid="paid-revenue">
-                        ${reportMetrics.paidRevenue.toFixed(2)}
+                        ₹{reportMetrics.paidRevenue.toFixed(2)}
                       </p>
                     </div>
                     <div className="w-10 h-10 bg-blue-100 rounded-lg flex items-center justify-center">
@@ -286,7 +286,7 @@ export default function Reports() {
                     <div>
                       <p className="text-sm text-muted-foreground">Pending Revenue</p>
                       <p className="text-2xl font-bold text-foreground" data-testid="pending-revenue">
-                        ${reportMetrics.pendingRevenue.toFixed(2)}
+                        ₹{reportMetrics.pendingRevenue.toFixed(2)}
                       </p>
                     </div>
                     <div className="w-10 h-10 bg-orange-100 rounded-lg flex items-center justify-center">

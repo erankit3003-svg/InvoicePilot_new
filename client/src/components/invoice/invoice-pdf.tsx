@@ -89,13 +89,13 @@ export function InvoicePDF({ invoice, customer }: InvoicePDFProps) {
                   {item.quantity}
                 </td>
                 <td className="border border-gray-300 px-4 py-2 text-right text-sm text-gray-900">
-                  ${item.price.toFixed(2)}
+                  ₹{item.price.toFixed(2)}
                 </td>
                 <td className="border border-gray-300 px-4 py-2 text-right text-sm text-gray-900">
                   {item.discount}%
                 </td>
                 <td className="border border-gray-300 px-4 py-2 text-right text-sm text-gray-900">
-                  ${item.total.toFixed(2)}
+                  ₹{item.total.toFixed(2)}
                 </td>
               </tr>
             ))}
@@ -109,20 +109,20 @@ export function InvoicePDF({ invoice, customer }: InvoicePDFProps) {
           <div className="bg-gray-50 border border-gray-300 p-4">
             <div className="flex justify-between mb-2 text-sm">
               <span className="text-gray-600">Subtotal:</span>
-              <span className="text-gray-900">${parseFloat(invoice.subtotal).toFixed(2)}</span>
+              <span className="text-gray-900">₹{parseFloat(invoice.subtotal).toFixed(2)}</span>
             </div>
             <div className="flex justify-between mb-2 text-sm">
               <span className="text-gray-600">Discount:</span>
-              <span className="text-gray-900">${parseFloat(invoice.discountAmount).toFixed(2)}</span>
+              <span className="text-gray-900">₹{parseFloat(invoice.discountAmount).toFixed(2)}</span>
             </div>
             <div className="flex justify-between mb-2 text-sm">
               <span className="text-gray-600">Tax:</span>
-              <span className="text-gray-900">${parseFloat(invoice.taxAmount).toFixed(2)}</span>
+              <span className="text-gray-900">₹{parseFloat(invoice.taxAmount).toFixed(2)}</span>
             </div>
             <div className="border-t border-gray-300 pt-2">
               <div className="flex justify-between font-bold text-lg">
                 <span className="text-gray-900">Total:</span>
-                <span className="text-gray-900">${parseFloat(invoice.total).toFixed(2)}</span>
+                <span className="text-gray-900">₹{parseFloat(invoice.total).toFixed(2)}</span>
               </div>
             </div>
           </div>

@@ -105,7 +105,7 @@ export default function Dashboard() {
                   <div>
                     <p className="text-sm text-muted-foreground">Total Sales</p>
                     <p className="text-3xl font-bold text-foreground" data-testid="total-sales">
-                      ${metrics?.totalSales.toFixed(2) || "0.00"}
+                      ₹{metrics?.totalSales.toFixed(2) || "0.00"}
                     </p>
                     <p className="text-sm text-green-600 mt-1">
                       <TrendingUp className="w-3 h-3 mr-1 inline" />
@@ -145,7 +145,7 @@ export default function Dashboard() {
                   <div>
                     <p className="text-sm text-muted-foreground">Pending Payments</p>
                     <p className="text-3xl font-bold text-foreground" data-testid="pending-payments">
-                      ${metrics?.pendingPayments.toFixed(2) || "0.00"}
+                      ₹{metrics?.pendingPayments.toFixed(2) || "0.00"}
                     </p>
                     <p className="text-sm text-orange-600 mt-1">
                       <Clock className="w-3 h-3 mr-1 inline" />

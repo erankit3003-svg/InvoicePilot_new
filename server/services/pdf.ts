@@ -81,9 +81,9 @@ export class PDFService {
       doc.text(item.productName || 'N/A', 20, currentY);
       doc.text(item.sku || 'N/A', 100, currentY);
       doc.text((item.quantity || 0).toString(), 130, currentY);
-      doc.text(`$${Number(item.price || 0).toFixed(2)}`, 150, currentY);
+      doc.text(`₹${Number(item.price || 0).toFixed(2)}`, 150, currentY);
       doc.text(`${item.discount || 0}%`, 180, currentY);
-      doc.text(`$${Number(item.total || 0).toFixed(2)}`, 210, currentY);
+      doc.text(`₹${Number(item.total || 0).toFixed(2)}`, 210, currentY);
       currentY += 10;
     });
     
@@ -95,12 +95,12 @@ export class PDFService {
     const totalsX = pageWidth - 80;
     
     doc.setFontSize(10);
-    doc.text(`Subtotal: $${parseFloat(invoice.subtotal).toFixed(2)}`, totalsX, finalY);
-    doc.text(`Tax: $${parseFloat(invoice.taxAmount).toFixed(2)}`, totalsX, finalY + 7);
-    doc.text(`Discount: $${parseFloat(invoice.discountAmount).toFixed(2)}`, totalsX, finalY + 14);
+    doc.text(`Subtotal: ₹${parseFloat(invoice.subtotal).toFixed(2)}`, totalsX, finalY);
+    doc.text(`Tax: ₹${parseFloat(invoice.taxAmount).toFixed(2)}`, totalsX, finalY + 7);
+    doc.text(`Discount: ₹${parseFloat(invoice.discountAmount).toFixed(2)}`, totalsX, finalY + 14);
     
     doc.setFont("helvetica", "bold");
-    doc.text(`Total: $${parseFloat(invoice.total).toFixed(2)}`, totalsX, finalY + 25);
+    doc.text(`Total: ₹${parseFloat(invoice.total).toFixed(2)}`, totalsX, finalY + 25);
     
     // Payment terms
     doc.setFontSize(9);
