@@ -71,9 +71,9 @@ export class PDFGenerator {
       item.productName,
       item.sku,
       item.quantity.toString(),
-      `$${item.price.toFixed(2)}`,
+      `₹${item.price.toFixed(2)}`,
       `${item.discount}%`,
-      `$${item.total.toFixed(2)}`,
+      `₹${item.total.toFixed(2)}`,
     ]);
     
     doc.autoTable({
@@ -98,12 +98,12 @@ export class PDFGenerator {
     const totalsX = pageWidth - 80;
     
     doc.setFontSize(10);
-    doc.text(`Subtotal: $${parseFloat(invoice.subtotal).toFixed(2)}`, totalsX, finalY);
-    doc.text(`Discount: $${parseFloat(invoice.discountAmount).toFixed(2)}`, totalsX, finalY + 7);
-    doc.text(`Tax: $${parseFloat(invoice.taxAmount).toFixed(2)}`, totalsX, finalY + 14);
+    doc.text(`Subtotal: ₹${parseFloat(invoice.subtotal).toFixed(2)}`, totalsX, finalY);
+    doc.text(`Discount: ₹${parseFloat(invoice.discountAmount).toFixed(2)}`, totalsX, finalY + 7);
+    doc.text(`Tax: ₹${parseFloat(invoice.taxAmount).toFixed(2)}`, totalsX, finalY + 14);
     
     doc.setFont("helvetica", "bold");
-    doc.text(`Total: $${parseFloat(invoice.total).toFixed(2)}`, totalsX, finalY + 25);
+    doc.text(`Total: ₹${parseFloat(invoice.total).toFixed(2)}`, totalsX, finalY + 25);
     
     // Payment terms
     doc.setFontSize(9);
@@ -210,9 +210,9 @@ export class PDFGenerator {
                   <td>${item.productName}</td>
                   <td>${item.sku}</td>
                   <td class="text-right">${item.quantity}</td>
-                  <td class="text-right">$${item.price.toFixed(2)}</td>
+                  <td class="text-right">₹${item.price.toFixed(2)}</td>
                   <td class="text-right">${item.discount}%</td>
-                  <td class="text-right">$${item.total.toFixed(2)}</td>
+                  <td class="text-right">₹${item.total.toFixed(2)}</td>
                 </tr>
               `).join('')}
             </tbody>
@@ -222,19 +222,19 @@ export class PDFGenerator {
             <table>
               <tr>
                 <td>Subtotal:</td>
-                <td class="text-right">$${parseFloat(invoice.subtotal).toFixed(2)}</td>
+                <td class="text-right">₹${parseFloat(invoice.subtotal).toFixed(2)}</td>
               </tr>
               <tr>
                 <td>Discount:</td>
-                <td class="text-right">$${parseFloat(invoice.discountAmount).toFixed(2)}</td>
+                <td class="text-right">₹${parseFloat(invoice.discountAmount).toFixed(2)}</td>
               </tr>
               <tr>
                 <td>Tax:</td>
-                <td class="text-right">$${parseFloat(invoice.taxAmount).toFixed(2)}</td>
+                <td class="text-right">₹${parseFloat(invoice.taxAmount).toFixed(2)}</td>
               </tr>
               <tr class="total-row">
                 <td>Total:</td>
-                <td class="text-right">$${parseFloat(invoice.total).toFixed(2)}</td>
+                <td class="text-right">₹${parseFloat(invoice.total).toFixed(2)}</td>
               </tr>
             </table>
           </div>

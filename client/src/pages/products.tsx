@@ -165,7 +165,7 @@ export default function Products() {
                           </td>
                           <td className="px-4 py-4 whitespace-nowrap">
                             <div className="text-sm text-foreground">
-                              ${parseFloat(product.price).toFixed(2)}
+                              ₹{parseFloat(product.price).toFixed(2)}
                             </div>
                           </td>
                           <td className="px-4 py-4 whitespace-nowrap">

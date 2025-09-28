@@ -240,7 +240,7 @@ export default function Dashboard() {
                               </td>
                               <td className="px-4 py-4 whitespace-nowrap">
                                 <div className="text-sm text-foreground">
-                                  ${parseFloat(invoice.total).toFixed(2)}
+                                  ₹{parseFloat(invoice.total).toFixed(2)}
                                 </div>
                               </td>
                               <td className="px-4 py-4 whitespace-nowrap">
@@ -294,7 +294,7 @@ export default function Dashboard() {
                               {product.sales} sold
                             </div>
                             <div className="text-xs text-green-600">
-                              ${Number(product.revenue || 0).toFixed(2)}
+                              ₹{Number(product.revenue || 0).toFixed(2)}
                             </div>
                           </div>
                         </div>
